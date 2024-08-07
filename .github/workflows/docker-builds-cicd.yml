@@ -3,7 +3,7 @@ name: Deploy Static game to EB using GA CICD using Dockerhub
 on:
   push:
     branches:
-      - master
+      - ga-cicd-eb
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: ga-cicd-eb
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -44,15 +44,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: ga-cicd-eb
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x
-      #- name: install imp
-        #run: |
-          #pip install
+          python-version: 3.9
 
       - name: Install EB CLI
         run: |
