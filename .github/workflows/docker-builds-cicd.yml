@@ -9,6 +9,7 @@ env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   AWS_REGION: 'us-east-1'
+  PLATFORM: 'python-3.x'
 
 jobs:
   build_and_push:
@@ -65,7 +66,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      # 
+      - name: Configure Elastic Beanstalk
+        run: |
+          eb init -p python-3.x 2048 --region ${{ env.AWS_REGION }} --platform ${{ env.PLATFORM }}
+      # Replace 'my-app' with your application name and 'python-3.x' with your platform
+
 
       - name: Deploy to Elastic Beanstalk
         run: |
