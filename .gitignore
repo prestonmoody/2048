@@ -1,6 +1,6 @@
 .sass-cache/
 
-# Elastic Beanstalk Files
+/.elasticbeanstalk
 
 
 venv/

@@ -1,13 +1,13 @@
 branch-defaults:
   master:
-    environment: cpclass-2048
+    environment: devops
     group_suffix: null
 global:
   application_name: '2048'
   branch: null
-  default_ec2_keyname: null
+  default_ec2_keyname: preston
   default_platform: Docker running on 64bit Amazon Linux 2
-  default_region: eu-west-1
+  default_region: us-east-1
   include_git_submodules: true
   instance_profile: null
   platform_name: null
