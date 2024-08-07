@@ -3,7 +3,7 @@ name: Deploy Static game to EB using GA CICD using Dockerhub
 on:
   push:
     branches:
-      - ga-cicd-eb
+      - master
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
